@@ -1,0 +1,49 @@
+# Ignore Mac System Files
+.DS_store
+
+# Ignoring Distribution and Packaging Files
+dist/
+eggs/
+.eggs/
+*.egg-info/
+*.egg
+build/
+
+# Python cache files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# PyTorch model files
+*.pt
+*.pth
+*.pkl
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Virtual environments
+venv/
+env/
+ENV/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Data files (if large)
+*.mat
+*.npz
+*.npy
+*.h5
+*.hdf5
+
+# Log files
+*.log
+logs/
+
+# Temporary files
+tmp/
+temp/
