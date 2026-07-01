@@ -1,6 +1,8 @@
 # Neural PDE Solver Python Package : torch-pde
 Automatic Differentiation based Partial Differential Equation solver implemented on the PyTorch API. Package distribution under the MIT License. Built for students to get initiated on Neural PDE Solvers as described in the paper [Physics-informed neural networks: A deep learning framework for solving forward and inverse problems involving nonlinear partial differential equations.](https://www.sciencedirect.com/science/article/pii/S0021999118307125)
 
+**This is a fork from [tf-pde](https://github.com/gitvicky/tf-pde) ported to PyTorch using Devstral AI assistance.**
+
 ### Installation 
 
 Since the package was built as a proof-of-concept, support for it has been discontinued. However the package still works with the mentioned dependencies. We suggest running the package within a conda environment. 
