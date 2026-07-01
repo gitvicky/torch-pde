@@ -19,7 +19,7 @@ with io.open("README.md", "r", encoding="utf-8") as f:
 #     install_requires = [x.strip() for x in f.readlines()]
     
 setup(
-    name='tf-pde',
+    name='torch-pde',
     version='0.651dev',
     description="Deep learning library for solving partial differential equations",
     author="Vignesh Gopakumar",
@@ -29,14 +29,13 @@ setup(
     license='MIT',
     long_description = long_desc,
     long_description_content_type = "text/markdown",
-    install_requires = ['numpy==1.18.5',
-                        'matplotlib==3.2.1',
-                        'scipy==1.4.1',
-                        'sympy==1.6',
-                        'tensorflow==2.2.0',
-                        'tensorflow-probability==0.10.0',
-                        'pydoe==0.3.8',
-                        'cloudpickle==1.4.1',
+    install_requires = ['numpy>=1.24.0',
+                        'matplotlib>=3.2.1',
+                        'scipy>=1.4.1',
+                        'sympy>=1.6',
+                        'torch>=1.7.0',
+                        'pydoe>=0.3.8',
+                        'cloudpickle>=1.4.1',
     ],
 
 )

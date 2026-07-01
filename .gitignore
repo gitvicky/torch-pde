@@ -7,3 +7,6 @@ eggs/
 .eggs/
 *.egg-info/
 *.egg
+
+#shell scripts
+*.sh

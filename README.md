@@ -1,21 +1,21 @@
-# Neural PDE Solver Python Package : tf-pde
-Automatic Differentiation based Partial Differential Equation solver implemented on the Tensorflow 2.x API. Package distribution under the MIT License. Built for students to get initiated on Neural PDE Solvers as described in the paper [Physics-informed neural networks: A deep learning framework for solving forward and inverse problems involving nonlinear partial differential equations.](https://www.sciencedirect.com/science/article/pii/S0021999118307125)
+# Neural PDE Solver Python Package : torch-pde
+Automatic Differentiation based Partial Differential Equation solver implemented on the PyTorch API. Package distribution under the MIT License. Built for students to get initiated on Neural PDE Solvers as described in the paper [Physics-informed neural networks: A deep learning framework for solving forward and inverse problems involving nonlinear partial differential equations.](https://www.sciencedirect.com/science/article/pii/S0021999118307125)
 
 ### Installation 
 
 Since the package was built as a proof-of-concept, support for it has been discontinued. However the package still works with the mentioned dependencies. We suggest running the package within a conda environment. 
 
 ```python
-conda create -n TFPDE python=3.7
-conda activate TFPDE
-pip install tf-pde
+conda create -n TORCHPDE python=3.7
+conda activate TORCHPDE
+pip install torch-pde
 ```
 
 ### [Example(s)](https://github.com/gitvicky/tf-pde/tree/master/Examples)
 To solve a particular PDE using a PINN, the package requires information on the three parameters: neural network hyperparameters, sampling parameters, information about the PDE and the case that we are solving for : 
 
 ```python
-import tfpde 
+import torch_pde 
 
 #Neural Network Hyperparameters
 NN_parameters = {'Network_Type': 'Regular',
@@ -49,13 +49,13 @@ PDE_parameters = {'Inputs': 't, x',
 ```
 ---
 Partial derivative of y with respect to x is represented by D(y, x) and the second order derivative is given by D(D(y, x), x) or D2(y, x).
- 
+  
 ---
 These parameters are used to initialise the model and sample the training data: 
 
 
 ```python
-model = tfpde.main.setup(NN_parameters, NPDE_parameters, PDE_parameters)
+model = torch_pde.main.setup(NN_parameters, NPDE_parameters, PDE_parameters)
 ```
 
 Once the model is initiated, we determine the training parameters and solve for the PDE: 
