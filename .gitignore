@@ -10,3 +10,7 @@ eggs/
 
 #shell scripts
 *.sh
+
+#Ignore Python cache files
+__pycache__/
+*.pyc
