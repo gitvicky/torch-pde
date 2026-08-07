@@ -206,14 +206,22 @@ class PDE(object):
         
     def _evaluate_expression(self, X):
         """Evaluate the PDE expression using the computed derivatives"""
-        # Normalize input for the model
-        if hasattr(self, 'normalise'):
-            X_norm = self.normalise(X)
+        # Get model prediction using the Network's forward method if available
+        if hasattr(self, 'forward'):
+            u = self.forward(self.model, X)
+            # For derivatives, we need the normalized input
+            if hasattr(self, 'normalise'):
+                X_norm = self.normalise(X)
+            else:
+                X_norm = X
         else:
-            X_norm = X
-        
-        # Get model prediction
-        u = self.model(X_norm)
+            # Fallback to direct model call
+            if hasattr(self, 'normalise'):
+                X_norm = self.normalise(X)
+                u = self.model(X_norm)
+            else:
+                u = self.model(X)
+                X_norm = X
         
         # Compute derivatives with respect to the normalized input
         derivatives = self._compute_derivatives(u, X_norm)

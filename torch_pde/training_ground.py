@@ -63,6 +63,8 @@ class TrainingGround(Network, Sampler, PDE):
         self.layers = layers 
         self.input_size = self.layers[0]
         self.output_size = self.layers[-1]
+        self.sampling_method = sampler
+        self.loss_list = []
         
         self.bc = boundary_conditions.select(BC)
         
@@ -81,10 +83,10 @@ class TrainingGround(Network, Sampler, PDE):
     def parameters(self):
         """Return the model parameters for compatibility with PyTorch optimizers and QN methods"""
         return self.model.parameters()
-        
+    
+    def __post_init__(self):
         self.loss_list =[]
-        self.sampling_method = sampler
-        print(f"DEBUG: sampler value = {sampler}")
+        print(f"DEBUG: sampler value = {self.sampling_method}")
 
     def ic_func(self, X, u):
         u_pred = self.model(X)
